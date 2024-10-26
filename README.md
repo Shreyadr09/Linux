@@ -59,10 +59,19 @@ sudo scp -i Linux-learning.pem ubuntu@ec2-3-85-114-0.compute-1.amazonaws.com:/ho
 mkdir scripts
 cd scripts/
 which bash   #tells which bash we are using
-nano devops.sh       # (#!bin/bash \n  echo "in devops.sh" \n echo $BASH \n name=Shreya \n echo "hello ${name}")
+nano devops.sh       # (#!bin/bash \n  echo "in devops.sh" \n echo $BASH \n name=Shreya \n echo "hello ${name}, enter you age" \n read age \n echo "age is ${age}")
 bash devops.sh       #execute the file
 chmod 777 devops.sh  #giving executible permissions to file
 ./devops.sh          #file becomes executible
+```
 
-
+## Argument with if else
+```bash
+#in devops.sh
+if [ "$1" = "shreya" ]
+then
+ echo "this is shreya"
+else
+ echo "this is not shreya"
+fi                                         #./devops.sh shreya
 ```
