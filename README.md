@@ -53,3 +53,16 @@ sudo scp -i Linux-learning.pem ../localfile.txt ubuntu@ec2-3-85-114-0.compute-1.
 sudo scp -i Linux-learning.pem ubuntu@ec2-3-85-114-0.compute-1.amazonaws.com:/home/ubuntu/new/file.txt ../        #copy from server to local system
 
 ```
+
+## Bash
+```bash
+mkdir scripts
+cd scripts/
+which bash   #tells which bash we are using
+nano devops.sh       # (#!bin/bash \n  echo "in devops.sh" \n echo $BASH \n name=Shreya \n echo "hello ${name}")
+bash devops.sh       #execute the file
+chmod 777 devops.sh  #giving executible permissions to file
+./devops.sh          #file becomes executible
+
+
+```
