@@ -132,7 +132,7 @@ add_user shreya test@123                                   #sudo ./devops.sh(nee
 nano backup.sh
 chmod 777 backup.sh
 
-#in backup.sh
+#in scripts/backup.sh
 
 #!/bin/bash
 src_dir=/home/ubuntu/scripts
