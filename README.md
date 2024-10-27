@@ -75,3 +75,77 @@ else
  echo "this is not shreya"
 fi                                         #./devops.sh shreya
 ```
+
+## if elif
+```bash
+#in devops.sh
+
+a=10
+b=20
+c=30
+if [[ $a -gt $b && $a -gt $c ]]
+then
+  echo "a is greatest"
+elif [[ $b -gt $a && $b -gt $c ]]
+then
+  echo "b is biggest"
+else
+ echo "c is biggest"
+fi                                         #./devops.sh shreya
+```
+
+## Loops
+```bash
+#in devops.sh
+
+for (( i=0; i<10; i++))
+do
+echo "$i"
+done                                  #./devops.sh shreya
+
+#iterate through files
+touch file-{1..10}.txt
+for FILE in *.txt
+do
+echo $FILE
+done
+```
+
+## Functions
+```bash
+#in devops.sh
+
+add_user()
+{
+USER=$1
+PASS=$2
+useradd -m -p $PASS $USER && echo "Successfully added user"
+}
+
+#MAIN
+add_user shreya test@123                                   #sudo ./devops.sh(needs sudo permission)
+                                                            #outside home you can view it by cat /etc/passwd
+```
+
+## Backups
+```bash
+nano backup.sh
+chmod 777 backup.sh
+
+#in backup.sh
+
+#!/bin/bash
+src_dir=/home/ubuntu/scripts
+tgt_dir=/home/ubuntu/backups
+
+curr_timestamp=$(date "+%Y-%m-%d-%H-%M-%S")
+backup_file=$tgt_dir/$curr_timestamp.tgz
+
+echo "Taking backup on $curr_timestamp"
+tar czf $backup_file --absolute-names $src_dir
+
+echo "backup complete"
+
+#in backups folder you can extrat the by using
+tar xf filename
+```
